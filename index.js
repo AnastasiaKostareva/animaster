@@ -30,7 +30,7 @@ function addListeners() {
             const block = document.getElementById('moveAndHideBlock');
             animaster().moveAndHide(block, 1000);
         });
-        
+
     document.getElementById('showAndHidePlay')
         .addEventListener('click', function () {
             const block = document.getElementById('showAndHideBlock');
@@ -56,6 +56,7 @@ function animaster(){
         fadeOut(element, duration) {
             element.style.transitionDuration =  `${duration}ms`;
             element.classList.add('hide');
+            element.classList.remove('show');
         },
         moveAndHide(element, duration){
             this.move(element, duration*2/5, {x:100, y:20});
